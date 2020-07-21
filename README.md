@@ -1,6 +1,6 @@
-# flutter_survey
+# ankeito
 
-A new Flutter project.
+アンケートのアプリ
 
 ## Getting Started
 
