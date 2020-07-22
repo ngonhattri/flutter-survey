@@ -3,13 +3,12 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import './lastpage.dart';
-import './configs/colors.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: AppColors.pink),
+      theme: ThemeData(primaryColor: Colors.pinkAccent),
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );
@@ -118,8 +117,8 @@ class SplashScreenState extends State<SplashScreen>
           ? BottomAppBar(
               child: Container(
               decoration: BoxDecoration(
-                  color: AppColors.white,
-                  boxShadow: [BoxShadow(color: AppColors.grey.withAlpha(200))]),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(color: Colors.grey.withAlpha(200))]),
               height: 50.0,
               child: GestureDetector(
                 onTap: () {
@@ -133,7 +132,7 @@ class SplashScreenState extends State<SplashScreen>
                 child: Center(
                     child: Text(
                   curIndex < 1 ? 'Continue' : 'Finish',
-                  style: TextStyle(fontSize: 20.0, color: AppColors.pink),
+                  style: TextStyle(fontSize: 20.0, color: Colors.pinkAccent),
                 )),
               ),
             ))
@@ -147,6 +146,7 @@ class SplashScreenState extends State<SplashScreen>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
+//                color: Colors.blue,
           margin: EdgeInsets.only(top: 30.0),
           height: 10.0,
           child: Row(
@@ -155,7 +155,7 @@ class SplashScreenState extends State<SplashScreen>
             children: List.generate(2, (int index) {
               return Container(
                 decoration: BoxDecoration(
-                  color: index <= curIndex ? AppColors.pink : AppColors.grey,
+                  color: index <= curIndex ? Colors.pinkAccent : Colors.grey,
                   borderRadius: BorderRadius.all(Radius.circular(2.0)),
                 ),
                 height: 10.0,
@@ -186,7 +186,7 @@ class SplashScreenState extends State<SplashScreen>
               child: Text(
                 overallStatus,
                 style: TextStyle(
-                    color: AppColors.pink,
+                    color: Colors.pinkAccent,
                     fontWeight: FontWeight.bold,
                     fontSize: 30.0),
                 textAlign: TextAlign.center,
@@ -195,7 +195,7 @@ class SplashScreenState extends State<SplashScreen>
             Expanded(
               child: Center(
                 child: Slider(
-                  activeColor: AppColors.pink,
+                  activeColor: Colors.pinkAccent,
                   value: overall,
                   onChanged: (value) {
                     setState(() {
@@ -504,6 +504,7 @@ class AnimationBox extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
+//                color: Colors.blue,
                     margin: EdgeInsets.only(top: 30.0),
                     height: 10.0,
                     child: Row(
@@ -512,7 +513,7 @@ class AnimationBox extends StatelessWidget {
                       children: List.generate(numberOfStep.value, (int index) {
                         return Container(
                           decoration: BoxDecoration(
-                            color: index == 0 ? AppColors.pink : AppColors.grey,
+                            color: index == 0 ? Colors.pinkAccent : Colors.grey,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(2.0)),
                           ),
@@ -535,13 +536,13 @@ class AnimationBox extends StatelessWidget {
                   Expanded(
                       child: Center(
                           child: FlutterLogo(
-                    colors: AppColors.pinklogo,
+                    colors: Colors.pink,
                     size: 100.0,
                   ))),
                   Text(
                     'アンケート',
                     style: TextStyle(
-                        color: AppColors.pink,
+                        color: Colors.pinkAccent,
                         fontWeight: FontWeight.bold,
                         fontSize: 30.0),
                   ),
@@ -570,14 +571,14 @@ class AnimationBox extends StatelessWidget {
                       child: Container(
                         height: height.value,
                         decoration: BoxDecoration(
-                            color: AppColors.pink,
+                            color: Colors.pinkAccent,
                             borderRadius: radius.value),
                         child: Center(
                           child: controller.status == AnimationStatus.dismissed
                               ? Text(
                                   'Zô nào',
                                   style: TextStyle(
-                                      color: AppColors.white, fontSize: 20.0),
+                                      color: Colors.white, fontSize: 20.0),
                                 )
                               : null,
                         ),
@@ -587,6 +588,10 @@ class AnimationBox extends StatelessWidget {
                 ),
               ),
             ),
+//            Opacity(
+//              opacity: 1.0 - opacity.value,
+//              child:
+//            ),
           ],
         );
       },
